@@ -30,4 +30,4 @@ Agar aap ise locally run karna chahte hain:
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/Vanshika-gupta001/ai-talent-scout/edit/main/README.md
+   git clone https://github.com/Vanshika-gupta001/ai-talent-scout
