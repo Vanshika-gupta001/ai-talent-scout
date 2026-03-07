@@ -143,6 +143,18 @@ st.markdown("""
 
     header[data-testid="stHeader"] { background: transparent !important; }
     .section-anchor { padding-top: 130px; }
+
+    /* Mobile Responsiveness Fix */
+    @media (max-width: 768px) {
+        .hero-title { font-size: 2.2rem !important; }
+        .nav-header { padding: 1rem !important; }
+        .nav-links { display: none; } /* Hide nav links on mobile for space */
+        .step-card { margin-bottom: 20px; }
+        .stTable { overflow-x: auto; }
+    }
+    
+    /* Make Radar Chart responsive */
+    .js-plotly-plot { width: 100% !important; }
     </style>
     
     <div class="area">
@@ -277,5 +289,4 @@ st.markdown("""
             </div>
         </div>
     </div>
-
     """, unsafe_allow_html=True)
