@@ -155,6 +155,39 @@ st.markdown("""
     
     /* Make Radar Chart responsive */
     .js-plotly-plot { width: 100% !important; }
+            /* --- Force Dark Buttons for Live Link --- */
+    .stButton>button {
+        background-color: transparent !important;
+        color: #00FF99 !important;
+        border: 2px solid #00FF99 !important;
+        border-radius: 0px !important;
+        font-family: 'Orbitron', sans-serif !important;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: 0.4s;
+    }
+
+    .stButton>button:hover {
+        background-color: #00FF99 !important;
+        color: #000 !important;
+        box-shadow: 0 0 20px #00FF99 !important;
+    }
+
+    /* --- Mobile Responsiveness Enhancements --- */
+    @media (max-width: 768px) {
+        .hero-title { font-size: 2.2rem !important; }
+        .nav-header { padding: 1rem !important; }
+        .nav-links { display: none; } 
+        .step-card { margin-bottom: 20px; }
+        
+        /* Columns ko mobile par stack karne ke liye fix */
+        [data-testid="column"] {
+            width: 100% !important;
+            flex: 1 1 100% !important;
+        }
+        
+        .hero-container { padding: 120px 10px 60px 10px !important; }
+    }
     </style>
     
     <div class="area">
