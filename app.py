@@ -41,7 +41,7 @@ st.set_page_config(page_title="AI Talent Scout Pro", page_icon="🛡️", layout
 
 # --- ULTRA NEON CUSTOM CSS ---
 st.markdown("""
-   <style>
+    <style>
     html { scroll-behavior: smooth; }
     @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap');
     @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
@@ -49,24 +49,39 @@ st.markdown("""
     * { font-family: 'Inter', sans-serif; }
     h1, h2, h3, .logo, .hero-title { font-family: 'Orbitron', sans-serif; }
     
-    /* Global App Background */
+    /* Deep Black Background */
     .stApp { 
         background-color: #030303 !important; 
         color: #E2E8F0; 
     }
 
-    /* Animated Neon Circles Background */
+    /* Animated Neon Circles */
     .area {
-        background: #030303; width: 100%; height: 100vh;
-        position: fixed; top: 0; left: 0; z-index: -1;
+        background: #030303;  
+        width: 100%; height: 100vh;
+        position: fixed; top: 0; left: 0;
+        z-index: -1;
     }
+
     .circles li {
         position: absolute; display: block; list-style: none;
-        width: 20px; height: 20px; background: rgba(0, 255, 153, 0.05);
+        width: 20px; height: 20px;
+        background: rgba(0, 255, 153, 0.05); /* Neon Green Tint */
         border: 1px solid rgba(0, 255, 153, 0.2);
-        animation: animate 25s linear infinite; bottom: -150px;
+        animation: animate 25s linear infinite;
+        bottom: -150px;
         box-shadow: 0 0 10px rgba(0, 255, 153, 0.2);
     }
+
+    .circles li:nth-child(1){ left: 25%; width: 80px; height: 80px; animation-delay: 0s; }
+    .circles li:nth-child(2){ left: 10%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 12s; }
+    .circles li:nth-child(3){ left: 70%; width: 20px; height: 20px; animation-delay: 4s; }
+    .circles li:nth-child(4){ left: 40%; width: 60px; height: 60px; animation-delay: 0s; animation-duration: 18s; }
+    .circles li:nth-child(5){ left: 65%; width: 20px; height: 20px; animation-delay: 0s; }
+    .circles li:nth-child(6){ left: 75%; width: 110px; height: 110px; animation-delay: 3s; }
+    .circles li:nth-child(7){ left: 35%; width: 150px; height: 150px; animation-delay: 7s; }
+    .circles li:nth-child(8){ left: 50%; width: 25px; height: 25px; animation-delay: 15s; animation-duration: 45s; }
+
     @keyframes animate {
         0%{ transform: translateY(0) rotate(0deg); opacity: 1; border-radius: 0; }
         100%{ transform: translateY(-1000px) rotate(720deg); opacity: 0; border-radius: 50%; }
@@ -81,10 +96,10 @@ st.markdown("""
         position: fixed; top: 0; left: 0; right: 0; width: 100%; z-index: 999999;
     }
     .logo { font-weight: 900; font-size: 1.6rem; color: #00FF99; text-shadow: 0 0 10px #00FF99; text-decoration: none !important; }
-    .nav-links a { text-decoration: none !important; color: #E2E8F0; font-weight: 600; margin-left: 25px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+    .nav-links a { text-decoration: none !important; color: #E2E8F0; font-weight: 600; transition: 0.3s; margin-left: 25px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
     .nav-links a:hover { color: #00FF99; text-shadow: 0 0 8px #00FF99; }
 
-    /* Hero Section */
+    /* Neon Hero */
     .hero-container {
         text-align: center; padding: 180px 20px 100px 20px;
         background: radial-gradient(circle at center, rgba(0, 255, 153, 0.15) 0%, rgba(3, 3, 3, 0) 70%);
@@ -96,54 +111,117 @@ st.markdown("""
         filter: drop-shadow(0 0 15px rgba(0, 255, 153, 0.5));
     }
 
-    /* Cards & Buttons */
+    .launch-btn-style {
+        background: transparent; color: #00FF99; padding: 15px 50px; 
+        border: 2px solid #00FF99; border-radius: 0px; display: inline-block; font-weight: bold; 
+        font-family: 'Orbitron', sans-serif; text-transform: uppercase; letter-spacing: 2px;
+        box-shadow: 0 0 15px rgba(0, 255, 153, 0.4);
+        transition: 0.4s; cursor: pointer;
+    }
+    .launch-btn-style:hover { background: #00FF99; color: black; box-shadow: 0 0 30px #00FF99; transform: scale(1.05); }
+    
+    /* Neon Step Cards */
     .step-card {
         background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(0, 255, 153, 0.3);
         padding: 40px 25px; border-radius: 10px; text-align: center;
         transition: 0.4s; height: 100%; backdrop-filter: blur(10px);
     }
-    .step-card:hover { border-color: #00FF99; box-shadow: 0 0 20px rgba(0, 255, 153, 0.3); background: rgba(0, 255, 153, 0.05); }
-
-    .stButton>button {
-        background-color: transparent !important; color: #00FF99 !important;
-        border: 2px solid #00FF99 !important; border-radius: 0px !important;
-        font-family: 'Orbitron', sans-serif !important; text-transform: uppercase;
-        letter-spacing: 2px; width: 100%; transition: 0.4s;
+    .step-card:hover { 
+        border-color: #00FF99; 
+        box-shadow: 0 0 20px rgba(0, 255, 153, 0.3);
+        background: rgba(0, 255, 153, 0.05);
     }
-    .stButton>button:hover { background-color: #00FF99 !important; color: #000 !important; box-shadow: 0 0 20px #00FF99 !important; }
+    .step-card h1 { filter: drop-shadow(0 0 10px currentColor); }
+    .step-card h4 { color: #00D1FF; font-weight: 700; text-transform: uppercase; }
 
-    /* --- LIVE LINK WIDGET FIXES --- */
-    /* Fix for Labels (Job Description, etc.) */
-    [data-testid="stWidgetLabel"] p {
-        color: #00FF99 !important; font-family: 'Orbitron', sans-serif !important;
-        text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem !important;
-    }
+    /* Custom Input Styling */
+    .stTextArea textarea { background: #000 !important; border: 1px solid #00FF99 !important; color: #00FF99 !important; box-shadow: inset 0 0 5px rgba(0, 255, 153, 0.2); }
+    .stFileUploader { border: 1px dashed #00D1FF !important; background: #000 !important; }
 
-    /* File Uploader Customization */
-    [data-testid="stFileUploader"] {
-        background-color: rgba(255, 255, 255, 0.03) !important;
-        border: 1px dashed #00FF99 !important; border-radius: 8px;
-    }
-    [data-testid="stFileUploaderText"] { color: #00D1FF !important; }
-    [data-testid="stFileUploader"] button {
-        background-color: #00FF99 !important; color: black !important; border: none !important;
-    }
-
-    .stTextArea textarea { background: #000 !important; border: 1px solid #00FF99 !important; color: #00FF99 !important; }
+    /* Expander Styling */
     .st-expander { background-color: rgba(255, 255, 255, 0.03) !important; border: 1px solid #333 !important; }
+
     header[data-testid="stHeader"] { background: transparent !important; }
     .section-anchor { padding-top: 130px; }
 
-    /* --- Combined Mobile Responsiveness --- */
+    /* Mobile Responsiveness Fix */
     @media (max-width: 768px) {
         .hero-title { font-size: 2.2rem !important; }
         .nav-header { padding: 1rem !important; }
-        .nav-links { display: none !important; } 
-        .hero-container { padding: 120px 10px 60px 10px !important; }
-        [data-testid="column"] { width: 100% !important; flex: 1 1 100% !important; }
+        .nav-links { display: none; } /* Hide nav links on mobile for space */
         .step-card { margin-bottom: 20px; }
+        .stTable { overflow-x: auto; }
     }
-</style>
+            
+            /* --- LABEL AND UPLOADER VISIBILITY FIX --- */
+    
+    /* 1. Fix for Black Labels (Job Description & Upload Resumes) */
+    [data-testid="stWidgetLabel"] p, 
+    [data-testid="stWidgetLabel"] div {
+        color: #00FF99 !important; /* Neon Green text */
+        font-family: 'Orbitron', sans-serif !important;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    /* 2. File Uploader Container Fix */
+    [data-testid="stFileUploader"] {
+        background-color: #000 !important; /* Dark background */
+        border: 1px dashed #00D1FF !important; /* Blue dashed border */
+        padding: 15px;
+        border-radius: 5px;
+    }
+
+    /* 3. Browse Files Button Visibility */
+    [data-testid="stFileUploader"] button {
+        background-color: #00FF99 !important; /* Bright Green */
+        color: #000 !important; /* Black text for contrast */
+        border: none !important;
+        font-weight: bold !important;
+        border-radius: 2px !important;
+    }
+
+    /* 4. Drag & Drop Text (Visible on live link) */
+    [data-testid="stFileUploaderText"] div {
+        color: #E2E8F0 !important;
+    }
+    
+    /* Make Radar Chart responsive */
+    .js-plotly-plot { width: 100% !important; }
+            /* --- Force Dark Buttons for Live Link --- */
+    .stButton>button {
+        background-color: transparent !important;
+        color: #00FF99 !important;
+        border: 2px solid #00FF99 !important;
+        border-radius: 0px !important;
+        font-family: 'Orbitron', sans-serif !important;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: 0.4s;
+    }
+
+    .stButton>button:hover {
+        background-color: #00FF99 !important;
+        color: #000 !important;
+        box-shadow: 0 0 20px #00FF99 !important;
+    }
+
+    /* --- Mobile Responsiveness Enhancements --- */
+    @media (max-width: 768px) {
+        .hero-title { font-size: 2.2rem !important; }
+        .nav-header { padding: 1rem !important; }
+        .nav-links { display: none; } 
+        .step-card { margin-bottom: 20px; }
+        
+        /* Columns ko mobile par stack karne ke liye fix */
+        [data-testid="column"] {
+            width: 100% !important;
+            flex: 1 1 100% !important;
+        }
+        
+        .hero-container { padding: 120px 10px 60px 10px !important; }
+    }
+    </style>
     
     <div class="area">
         <ul class="circles">
