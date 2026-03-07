@@ -401,63 +401,21 @@ st.markdown("""
         
         .hero-container { padding: 120px 10px 60px 10px !important; }
     }
-            /* --- Animated Cyber Footer --- */
-    .cyber-footer {
-        background: rgba(0, 255, 153, 0.02);
-        border-top: 2px solid #00FF99;
-        padding: 60px 20px;
-        margin-top: 100px;
-        position: relative;
-        overflow: hidden; /* Animation bahar na jaye */
-        box-shadow: 0 -10px 20px rgba(0, 255, 153, 0.1);
-    }
-
-    /* Moving Scanning Line Animation */
-    .cyber-footer::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, #00FF99, transparent);
-        animation: scan-line 4s linear infinite;
-    }
-
-    @keyframes scan-line {
-        0% { left: -100%; }
-        100% { left: 100%; }
-    }
-
-    /* Subtle Pulsing Background */
-    .cyber-footer {
-        animation: footer-glow 5s infinite alternate;
-    }
-
-    @keyframes footer-glow {
-        from { background: rgba(0, 255, 153, 0.02); }
-        to { background: rgba(0, 255, 153, 0.07); }
-    }
-
-    .footer-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1200px;
-        margin: 0 auto;
-        position: relative;
-        z-index: 2;
-    }
-
-    /* Mobile Responsive Logic */
-    @media (max-width: 768px) {
-        .footer-content {
-            flex-direction: column !important;
-            text-align: center !important;
-            gap: 30px;
+            /* footer responsive */
+            /* Mobile Specific Footer Fix */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column !important;
+                text-align: center !important;
+            }
+            .footer-item-right {
+                text-align: center !important;
+                margin-top: 20px !important;
+            }
+            .footer-main-box {
+                padding: 40px 20px !important;
+            }
         }
-        .footer-right { text-align: center !important; }
-    }
     </style>
     
     <div class="area">
@@ -580,16 +538,17 @@ if st.button("EXECUTE ANALYSIS"):
 
 # --- CYBER FOOTER ---
 st.markdown("""
-    <div style="background: rgba(0, 255, 153, 0.05); border-top: 2px solid #00FF99; padding: 60px 40px; margin-top: 100px;">
-        <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-            <div style="flex: 1; min-width: 300px;">
+        <div style="background: rgba(0, 255, 153, 0.05); border-top: 2px solid #00FF99; padding: 60px 40px; margin-top: 100px;">
+            <div style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+             <div style="flex: 1; min-width: 300px;">
                 <h4 style="color:#00FF99; font-family:Orbitron;">🛡️ RE-SCREEN AI</h4>
                 <p style="color:#888;">Protocol version: 3.0.4.5<br>AI-Driven Meta Screening for high-tier recruitment.</p>
-            </div>
-            <div style="flex: 1; text-align: right;">
+             </div>
+              <div style="flex: 1; text-align: right;">
                 <p style="color:#00D1FF; font-family:Orbitron;">SYSTEM DEVELOPER: VANSHIKA GUPTA</p>
                 <p style="color:#444;">© 2026 ALL RIGHTS RESERVED | ENCRYPTED CONNECTION</p>
+              </div>
             </div>
         </div>
-    </div>
-    """, unsafe_allow_html=True)
+ """, unsafe_allow_html=True) 
+
